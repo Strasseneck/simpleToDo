@@ -5,12 +5,13 @@ const bodyparser = require('koa-bodyparser')
 const router = require('./router')
 const PORT = 3000;
 
+
 app
 .use(cors())
-.use(bodyparser)
+.use(bodyparser())
 .use(router.routes())
 .use(router.allowedMethods());
 
-app.listen((PORT) => {
-    console.log(`server listening at ${PORT}`)
-})
+app.listen(PORT);
+
+console.log(`server listening at http:${PORT}`)
