@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { List } from './components/List';
-import { getAllToDos }  from './ApiClient';
+import { getAllToDos, deleteToDo }  from './ApiClient';
 import { AddItem } from './components/AddItem';
 
 import './App.css'
@@ -21,10 +21,16 @@ function App() {
     })()  
   }, [])
 
+  function deleteItem (id) {
+    deleteToDo(id)
+    setToDos(current => current.filter(elem => elem._id !== id ));     
+  }
+  
+
   return (
     <>
      <AddItem setToDos={setToDos} />
-     <List list={toDos} setToDos={setToDos} />
+     <List list={toDos} deleteItem={deleteItem} />
     </>
   )
 }

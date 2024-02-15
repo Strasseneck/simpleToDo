@@ -25,7 +25,7 @@ exports.deleteToDo = async (ctx) => {
     try {
         const res = await ToDo.findByIdAndDelete(ctx.params.id);
         ctx.status = 200;
-        ctx.message = 'deleted todo'
+        // ctx.message = 'deleted todo'
     } catch (error) {
         console.log(error);
     }
