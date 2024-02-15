@@ -1,12 +1,19 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react';
+import { List } from './components/List';
+
 import './App.css'
 
 function App() {
-  const [state, setState] = useState(0)
-
+  const [toDos, setToDos] = useState([{
+    'title': 'Make App'
+  },
+  {
+    'title': 'Finish App'
+  }
+])
   return (
     <>
-     
+     <List list={toDos} />
     </>
   )
 }
