@@ -5,7 +5,7 @@ export function AddItem({setToDos}) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const newToDo = { "title": toDo };
+    const newToDo = { "title": toDo, "priority": 0};
     setToDos(current => [...current, newToDo])
   }
 

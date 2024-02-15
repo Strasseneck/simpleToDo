@@ -1,8 +1,6 @@
 export function ListItem({ item }) {
     return (
-      <>
-       <p>{item.title}</p>
-      </>
+       <p key={item._id}>{item.title}</p>
     )
   }
   
