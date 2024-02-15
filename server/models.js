@@ -8,6 +8,6 @@ const toDoSchema = new mongoose.Schema ({
 
 const ToDo = mongoose.model('ToDo', toDoSchema);
 
-mongoose.connect('mongodb://127.0.0.1/simpletodos');
+const connection = mongoose.connect('mongodb://127.0.0.1/simpletodos');
 
-module.exports = { mongoose, ToDo};
+module.exports = { connection, ToDo};

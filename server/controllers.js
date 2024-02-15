@@ -1,8 +1,8 @@
-const ToDo = require('./models')
+const { ToDo } = require('./models')
 
 exports.getAll = async (ctx) => {
     try {
-        const res = await ToDo.find({})
+        const res = await ToDo.find({});
         ctx.status = 200;
         ctx.body = res;
     } catch (error) {
