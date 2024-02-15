@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 
-
 const toDoSchema = new mongoose.Schema ({
     title: String,
     priority: Number
