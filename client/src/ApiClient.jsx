@@ -40,3 +40,18 @@ export async function deleteToDo (id) {
         console.log(error);
     }
 }
+
+export async function move (id, direction) {
+    try {
+        const res = await fetch (`${baseUrl}/todos/${id}/${direction}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+    const result = res.json();
+    return result;
+    } catch (error) {
+        console.log(error);
+    } 
+}
