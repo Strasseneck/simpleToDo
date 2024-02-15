@@ -1,6 +1,7 @@
 import { ListItem } from "./ListItem"
 
-export function List({list}) {  
+export function List({list}) { 
+
     const listItems = list.map((item) => <ListItem item={item} />)
     return (
     <>
