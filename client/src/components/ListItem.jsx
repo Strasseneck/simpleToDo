@@ -20,6 +20,7 @@ export function ListItem({ item, deleteItem, updateItem}) {
     return (
       <div key={item._id}>
          <p>{item.title}</p>
+         <p>{item.priority}</p>
          <button onClick={moveUp}>Move Up</button>
          <button onClick={moveDown}>Move Down</button>
          <button onClick={handleCLick}>delete</button>
