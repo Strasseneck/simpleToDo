@@ -1,12 +1,16 @@
 import { useState } from "react"
+import { addToDo } from "../ApiClient";
 
 export function AddItem({setToDos}) {
   const [toDo, setToDo] = useState('');
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const newToDo = { "title": toDo, "priority": 0};
-    setToDos(current => [...current, newToDo])
+    const newToDo = { "title": toDo, "priority": 1};
+    const res = await addToDo(newToDo);
+    console.log(res);
+    setToDos(current => [...current, res])
+    setToDo('');
   }
 
   const handleChange = (event) => {

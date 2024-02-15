@@ -10,7 +10,7 @@ export async function getAllToDos() {
     }
 }
 
-export async function addToDo(toDo) {
+export async function addToDo (toDo) {
     try {
         const res = await fetch(`${baseUrl}/todos`, {
             method: 'POST',
@@ -21,6 +21,21 @@ export async function addToDo(toDo) {
         })
         const result = res.json();
         return result;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export async function deleteToDo (id) {
+    try {
+        const res = await fetch (`${baseUrl}/todos/${id}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+    const result = res.json();
+    return result;
     } catch (error) {
         console.log(error);
     }
